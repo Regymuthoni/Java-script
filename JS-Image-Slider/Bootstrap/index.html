@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="slider.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+
+        <body>  
+    <div class="slidercontainer">  
+        <div class="showSlide">  
+            <img src="img/photo5.jpg" />  
+            <div class="content"><p>THE CAPITAL CITY OF KENYA</p><hr class="style2"></div>  
+        </div>  
+        <div class="showSlide">  
+            <img src="img/photo2.jpg"/>  
+            <div class="content"><p>Nairobi has been ranked as the top most<br> dynamic city in the African continent. </p>
+            <hr class="style2"></div>  
+        </div>  
+  
+        <div class="showSlide">  
+            <img src="img/photo3.jpg"/>  
+            <div class="content"><p>Its beauty can't be deniable even in the night</p><hr class="style2"></div>  
+        </div>  
+        <div class="showSlide">  
+            <img src="img/photo4.jpg"/>  
+            <div class="content"><p>If you want to be reminded of the beauty of Nairobi, just watch the sunrise.”</p><hr class="style2"> </div>  
+        </div>  
+        <div class="showSlide">  
+            <img src="img/photo1.jpg"/>  
+            <div class="content"><p>Lights every where.</p><hr class="style2"></div>  
+        </div>  
+        <div class="showSlide">  
+            <img src="img/photo6.jpg"/>  
+            <div class="content"><p>Designers every corner</p><hr class="style2"></div> 
+
+        </div>  
+        <!-- Navigation arrows -->  
+        <a class="left" onclick="nextSlide(-1)"> &#8249;</a>  
+        <a class="right" onclick="nextSlide(1)">&#8250;</a> 
+           
+            <ul id="slider_btns">
+    <li onclick="go(1,1)"></li>
+    <li onclick="go(2,2)"></li>
+    <li onclick="go(3,3)"></li>
+    <li onclick="go(4,4)"></li>
+    <li onclick="go(5,5)"></li>
+  </ul>
+        </ul>
+
+    </div>  
+</body>  
+
+<script type="text/javascript">  
+        var slide_index = 1;  
+        displaySlides(slide_index);  
+        function nextSlide(n) {  
+            displaySlides(slide_index += n);  
+        }  
+        function currentSlide(n) {  
+            displaySlides(slide_index = n);  
+        }  
+        function displaySlides(n) {  
+            var i;  
+            var slides = document.getElementsByClassName("showSlide");  
+            if (n > slides.length) { slide_index = 1 }  
+            if (n < 1) { slide_index = slides.length }  
+            for (i = 0; i < slides.length; i++) {  
+                slides[i].style.display = "none";  
+            }  
+            slides[slide_index - 1].style.display = "block";  
+        }  
+</script>   
+    </html>
